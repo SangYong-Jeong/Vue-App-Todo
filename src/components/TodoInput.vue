@@ -4,7 +4,6 @@
     <span class="addContainer" v-on:click="addTodo">
       <i class="fas fa-plus addBtn"></i>
     </span>
-
     <Modal v-if="showModal" @close="showModal = false">
       <h3 slot="header">
         경고!
@@ -29,7 +28,6 @@ export default {
   methods: {
     addTodo() {
       if (this.newTodoItem !== '') {
-        // this.$emit('addTodoItem', this.newTodoItem);
         this.$store.commit('addOneItem', this.newTodoItem);
         this.clearInput();
       } else {
